@@ -1,20 +1,41 @@
-//objects in JS
-let circle = {
-    radius: 1,  // variable and it's value with in an object
-    loc: {      // an object with in an object
-        x: 1,   
-        y:2
-    },
-    isVisible: true,    // boolean it's value with in an object
-    draw: function() {  // a function with in an object
-        console.log('drawing');
-    },
-    move: function() {
-        console.log('moving');
-    }
+// OOPs programminf style
+
+const circle = {
+  radius: 1,
+  location: {
+    x: 2,
+    y: 3,
+  },
+  isVisible: true,
+  draw: function () {
+    console.log("Draw");
+  },
 };
 
-circle.draw(); // according to oops concept, here the draw is a method which 
-                // has a functionality of logging a drawing message to the console
+circle.draw();
 
-circle.move();//    ''    ''     ''      ''      ''       ''
+// In JS, the objects are dynamic in nature. Means, the object can grow or
+// shrink, or in other words we can add or delete the member of an object.
+// let me show:
+
+const car = {
+  name: "Meclaren",
+};
+
+// Adding a data member
+car.color = "Black";
+console.log(car);
+
+// Adding a method
+car.start = function () {
+  console.log("start");
+};
+console.log(car);
+
+// Deleting a data member
+delete car.color;
+console.log(car);
+
+// Deleting a method
+delete car.start;
+console.log(car);

@@ -1,141 +1,179 @@
-//Operators
-    //Arithametic, Assignment, Comparison, Logical & Bitwise operators.
-        //Arithametic opertr
-        let x=10;
-        let y=3;
-        //Expression(x+y) is a statement whcih produces some value
-        console.log(x+y) //Addition
-        console.log(x-y) //Subtract
-        console.log(x*y) //Multiplication
-        console.log(x/y) //Division
-        console.log(x%y)//reminder of division
-        console.log(x**y)// exponentation
-        console.log(++x)// pre increment
-        console.log(x++)//post increment
-        console.log(--x)// pre decement
-        console.log(x--)// post decrement
+// 1. Arithmetic Operators
+// ------------------------------
+let x = 10;
+let y = 3;
 
-        //Assignment opertr
-        let a=15;
-        a++;
-        a=a+5;
-        //or a+=5
-        //a*=3
+// console.log(x + y); // Addition
+// console.log(x - y); // Sutraction
+// console.log(x * y); // Multiplication
+// console.log(x / y); // Division
+// console.log(x % y); // Modules - finding the reminder of x/y
+// console.log(x ** y);    // Exponentiation - finding the power of x
 
-        //comparison opertr
-        let b=23;
-        console.log(b>25);
-        console.log(b>=23);
-        console.log(b<25);
-        console.log(b<=23);
-        console.log(b==23);
-        console.log(b!=25);
+// Increment (++)
+console.log(++x); // pre increment
+console.log(x++); // post increment
+console.log(x);
 
-        //Equality opertr
-        //Strict equality opertr (both type and value  elements on either side of equality opetr should be equal)
-        //console.log(1 === 1); will return true
-        //console.log('1' === 1);   will return false
-        //BUT if
-        //console.log(1 == 1);   will return true
-        //consoe.log('1' == 1);  will return true
+// Decrement (--)
+console.log(--x); // pre decrement
+console.log(x--); // post decrement
+console.log(x);
 
-        //loose equality opertr (only value tobe equal)
-        console.log(1==1);
-        console.log('1' == 1);
-        console.log(true == 1);
+// 2. Assignment Operators (=)
+// -----------------------------------
+x++; // which is same as, x = x + 1
+// Like that, if we have to increment x by 5. Then the above procedure not convinient.
+// So, we follow;
+x += 5; // which is same as, x = x + 5
+// Similarlly
+x *= 5;
 
+// 3. Comparison Operators
+// -----------------------------
+x = 1;
+console.log(x > 0);
+// The result of a comparison operator will be boolean values.
 
-        //Ternory opertr
-        let points=110;
-        let type = points > 100 ? 'gold' : 'silver';
-        console.log(type);
+// 1.Relational operators
+console.log(x >= 1);
+console.log(x < 0);
+console.log(x < 1);
+console.log(x <= 1);
 
+// 2.Equality operators
+console.log(x === 1);
+console.log(x !== 1);
 
-        //Logical opertr
-        //AND(&&), OR(||) and NOT(!)
-        //AND
-        /*console.log(false && true);
+// 1.Strict equality operator - (Both Type and value are checked)
+console.log(1 === 1);
+console.log("1" === 1);
 
-        let highIncome = true;
-        let goodCreditScore = true;
-        let eligibleForLoan = highIncome && goodCreditScore;
-        console.log(eligibleForLoan);*/
+// 2.Loose equality operator - (Value checking only)
+console.log(1 == 1);
+console.log("1" == 1);
+console.log(true == 1);
+console.log("2" == 1);
+// In thw case of the loose equality operator, if the type of the operant at
+// the left side of the operartor is different from the type of the operant
+// at the right side of the operartor. Then the JS will convert the type of the
+// right operant to match with the type of the left operand. Here, only the
+// value of the both operands are checked.
 
-        //OR
-        // console.log(false && true);
+// 4.Ternary Operators
+// -------------------------
+let points = 90;
+let typeOfCustomer = points > 100 ? "Gold" : "Silver";
+console.log(typeOfCustomer);
 
-        // let highIncome = false;
-        // let goodCreditScore = true;
-        // let eligibleForLoan = highIncome || goodCreditScore;
-        // console.log(eligibleForLoan);
+// 5.Logical Operators
+// -------------------------
+// 1.Logical AND (&&)
+// Returns true if both of the operants are true.
+let hightIncome = false;
+let goodCreditScore = false;
+let eligibleForLoan = hightIncome && goodCreditScore;
+console.log("Eligible for Loan", eligibleForLoan);
 
-        //NOT
-        console.log(false && true);
+// 2.Logical OR (||)
+// Returns true of one of the operand is true
+console.log(false || true);
 
-        let highIncome = false;
-        let goodCreditScore = false;
-        let eligibleForLoan = highIncome || goodCreditScore;
-        console.log('Eligbible', eligibleForLoan);
+// 3.Logical NOT (!)
+let applicationRefused = !eligibleForLoan;
+console.log("Application Refused ", applicationRefused);
+// Here, the eligibleForLoan will be opposite of applicationRefused. That
+// means, if the eligibleForLoan is true then the applicationRefused will
+// be false and viseversa.
 
-        let applicationRefused = !eligibleForLoan;
+// Truthy and Falsy. ie, using logical operators with non boolean values.
+// Falsy values in JS (not a boolean false):-
+// undefined
+// null
+// 0
+// false (boolean false)
+// "" (empty string)
+// NaN (Not a Number)
 
-        console.log('ApplicationRefused', applicationRefused);
+// Anything that is not a falsy is truthy.
 
-         //The result of a logical expression not be true or false
-         //ex:
-         console.log(false || 'farisy'); //The string is not empty it has charecters. So it is truthy
-         console.log(false || 1);
-         console.log(false || 0);
-         //Falsy (false):
-            //undefined
-            //null
-            //0
-            //false
-            //''
-            //NaN
+console.log(false || true);
+console.log(false || "Farisy"); // Truthy expression
+// In the above expression, the first operant is false. So, the execution
+// continues and the JS engine will evaluates that the second operant is a
+// truthy value (ie, not a boolean true). So, because it is a truthy value.
+// The JS will rerturn that tuthy value. And it will ignore the opeands after
+// that truthy value, even there are millions of operands.
+// Eg:-
+console.log(false || 1 || 2 || 3);
+console.log("" || 10);
+console.log(true || "Hi");
+// Application senario of the truthy and falsy.
+// Eg:- Color of a T-Shirt that a use want to buy.
+let userColor = "red";
+let defaultColor = "blue";
+let selectedColor = userColor || defaultColor; // returns a truthy value
+console.log(selectedColor);
+// In the above senario, if the user selected a color then the selectedColor
+// will be the userColor. Otherwise the selectedColor will be the defaultColor.
 
-         //Anything that is not Falsy it is Truthy
+// 6.Bitwise Operators
+// -------------------------
+// 1.Bitwise OR (|)
+// 1 = 00000001
+// 2 = 00000010
+// R = 00000011
+console.log(1 | 2);
 
-         console.log(false || 1 || 2); //short circuting
+// 2.Bitwise AND (&)
+// 1 = 00000001
+// 2 = 00000010
+// R = 00000000
+console.log(1 & 2);
 
-         //ex:
-         let userColor='red';
-         let defaultColor='blue';
-         let currentColor=userColor || defaultColor
-         console.log(currentColor); //The JS interpret the value of a boolen expression. if it founds that 
-                                    //it is falsy or truthy, then it will ignore the next boolean value andreturn 
-                                    //the first boolen value only. Otherwise it will continue.
+// Realworld senario of bitwise operators
+// Access control system
+// Read, Write and Execute permissions
+// To implement these permission. We use 3 bits from the right side os a 8
+// bit binary and we are not bothered about the existing 5 bits. ie,
+// Read ->    00000100 -> 4
+// Write ->   00000010 -> 2
+// Execute -> 00000001 -> 1
+const readPermission = 4;
+const writePermission = 2;
+const executePermission = 1;
+const rootUser = 7;
+let myPermission = 0;
 
-        
+myPermission = myPermission | writePermission;
+let message = myPermission & writePermission ? "yes" : "no";
+console.log(message);
+// Here, with the bitwise OR operator we can add permission. And with
+// bitwise AND operator we can check if we have a given permission.
 
-        //Bitwise Opertr - They work under individual bits
-        //Bitwise OR(|)
-            //1 = 00000001
-            //       |
-            //2 = 00000010
-            //--------------
-            //    00000011 - 3
-            console.log(1 | 2);
-        //Bitwise AND(&)
-            //1 = 00000001
-            //       &
-            //2 = 00000010
-            //--------------
-            //    00000000 - 0
-            console.log(1 & 2);
-        
-            //Access control system
-            //Read, Write and Excecute
-            //Read - 00000100
-            //Write - 00000100
-            //Exceute - 00000001
+// Operator Precidence
+// -----------------------
+// case 1
+console.log(2 + 3 * 4); // 14
+// case 2
+console.log((2 + 3) * 4); // 20
+// In case 1, the multiplication operator have the higher precidence
+// In case 2, the operatiion enclose with in the paranthesisi have the
+// hiher precedence.
+// Operators in the order of decresing precedence.
+// () -> *, / -> +, -
 
-            const readPermission = 4;
-            const writePermission = 2;
-            const executePermission = 1;
-            
-            let myPermission =0;
-            myPermission=myPermission | readPermission | writePermission;
-            console.log(myPermission);
+// Excercise - Swapping variables
+// -----------------------------------
+let a = "red";
+let b = "blue";
 
-            let message=(myPermission & readPermission) ? 'yes' : 'no'
+console.log(a);
+console.log(b);
+
+let backup = a;
+a = b;
+b = backup;
+
+console.log(a);
+console.log(b);
