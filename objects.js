@@ -1,4 +1,4 @@
-// OOPs programminf style
+// OOP's programming style
 
 const circle = {
   radius: 1,
