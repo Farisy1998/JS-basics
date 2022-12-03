@@ -3,7 +3,7 @@
 // Constructor function follows PascalCase naming convension.
 
 function Circle(radius) {
-  // In JS unclike other programing language like java, the this operator will
+  // In JS unclike other programing language like java, the 'this' keyword will
   // behave differentlly in different occation. Here, the this operator will
   // points to the current object from whoch the constructor function is called.
   this.radius = radius;

@@ -1,6 +1,6 @@
 // In JS every object have a property called constuctor.
 // When we create an object using object literal syntax,
-const x = {
+const x = {   // Object literal syntax.
   value: 1,
 };
 // The JS will use a special constructor function called Object() to create
