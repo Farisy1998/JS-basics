@@ -156,3 +156,96 @@ function isPrime(number) {
 
   return true;
 }
+
+// Factory function and Constructor function
+// ---------------------------------------------
+const address = {
+  state: "Kerala",
+  city: "Kothamangalam",
+  zipCode: 686671,
+};
+iterate(address);
+
+function iterate(address) {
+  for (let key in address) // Enumerating through the address object
+    console.log(key, address[key]);
+}
+
+// Factory function
+const anotherAddress = createAddress("Karnataka", "Banglore", 12345);
+console.log(anotherAddress);
+
+function createAddress(state, city, zipCode) {
+  return {
+    state,
+    city,
+    zipCode,
+  };
+}
+
+// Constructor function
+const addressObj = new Address("Kerala", "Kozhikode", 123456);
+console.log(addressObj);
+
+function Address(state, city, zipCode) {
+  this.state = state;
+  this.city = city;
+  this.zipCode = zipCode;
+}
+
+// Object Equality
+// -------------------
+// Use the above Address constructor function
+const address1 = new Address("a", "b", 0);
+const address2 = new Address("a", "b", 0);
+
+console.log(areEqual(address1, address2));
+function areEqual(address1, address2) {
+  for (let key in address1)
+    if (address1[key] !== address2[key])
+      return false;
+  return true;
+}
+
+console.log(isSame(address1, address2));
+function isSame(address1, address2) {
+  return address1 === address2 ? true : false;
+}
+
+// Blog Post Object
+// ------------------------
+const post = {
+  title: 'a',
+  body: 'abc',
+  author: 'xyz',
+  views: 100,
+  comments: [
+    { author: 'a', body: 'b', },
+    { author: 'c', body: 'd' },
+  ],
+  isLive: true,
+};
+console.log(post);
+
+// Constructor Function
+// ------------------------
+const anotherPost = new Post('a', 'b', 'c');
+console.log(anotherPost);
+
+function Post(title, body, author) {
+  this.title = title;
+  this.body = body;
+  this.author = author;
+  this.views = 0;
+  this.comments = [];
+  this.isLive = false;
+}
+
+// Price Range Objects
+// -----------------------
+let priceRange = [
+  { label: "$", tooltip: "Inexpensive", minPerPerson: 0, maxPerPerson: 10 },
+  { label: "$$", tooltip: "Moderate", minPerPerson: 11, maxPerPerson: 20 },
+  { label: "$$$", tooltip: "Pricey", minPerPerson: 21, maxPerPerson: 50 },
+];
+console.log(priceRange);

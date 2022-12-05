@@ -3,9 +3,10 @@
 const x = {   // Object literal syntax.
   value: 1,
 };
-// The JS will use a special constructor function called Object() to create
-// the object x. It will look like,
+// The JS will use a special build-in constructor function called Object()
+// to create the object x. It will look like,
 // const x = new Object();
+
 console.log(x.constructor);
 
 // Eg:-
