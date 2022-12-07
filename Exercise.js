@@ -201,9 +201,7 @@ const address2 = new Address("a", "b", 0);
 
 console.log(areEqual(address1, address2));
 function areEqual(address1, address2) {
-  for (let key in address1)
-    if (address1[key] !== address2[key])
-      return false;
+  for (let key in address1) if (address1[key] !== address2[key]) return false;
   return true;
 }
 
@@ -215,13 +213,13 @@ function isSame(address1, address2) {
 // Blog Post Object
 // ------------------------
 const post = {
-  title: 'a',
-  body: 'abc',
-  author: 'xyz',
+  title: "a",
+  body: "abc",
+  author: "xyz",
   views: 100,
   comments: [
-    { author: 'a', body: 'b', },
-    { author: 'c', body: 'd' },
+    { author: "a", body: "b" },
+    { author: "c", body: "d" },
   ],
   isLive: true,
 };
@@ -229,7 +227,7 @@ console.log(post);
 
 // Constructor Function
 // ------------------------
-const anotherPost = new Post('a', 'b', 'c');
+const anotherPost = new Post("a", "b", "c");
 console.log(anotherPost);
 
 function Post(title, body, author) {
@@ -249,3 +247,133 @@ let priceRange = [
   { label: "$$$", tooltip: "Pricey", minPerPerson: 21, maxPerPerson: 50 },
 ];
 console.log(priceRange);
+
+// Array from Range
+// --------------------
+const arrayFromRange = (min, max) => {
+  const numbers = [];
+
+  while (min <= max) {
+    numbers.push(min);
+    min++;
+  }
+  return numbers;
+};
+
+console.log(arrayFromRange(-10, -4));
+
+// Includes
+// --------------
+const numbers = [1, 2, 3, 4, 5];
+// console.log(includes(numbers, 10));
+
+// function includes(array, searchElement) {
+//   for (let element of array)
+//     if (element === searchElement)
+//       return true;
+//   return false;
+// }
+
+// Except
+// ----------
+let input = [1, 2, 3, 4, 1, 1];
+const result = except(input, [1, 2, 3, 4]);
+console.log(result);
+
+function except(array, excluded) {
+  const output = [];
+
+  for (let element of array)
+    if (!excluded.includes(element)) output.push(element);
+
+  return output;
+}
+
+// Moving an element in an array
+// ---------------------------------
+const inputs = [1, 2, 3, 4];
+const newArray = move(inputs, 1, 2);
+console.log(newArray);
+
+function move(array, index, offset) {
+  // offset -> distance or count or number of jumps from the 0th index of
+  // the array to the offset index.
+  const position = index + offset;
+
+  if (position >= array.length || position < 0) {
+    console.error("Invalid offset");
+    return;
+  }
+
+  const output = [...array];
+  const element = output.splice(index, 1)[0];
+  output.splice(position, 0, element);
+  return output;
+}
+
+// Count Occurences
+// ---------------------
+const countOccurences = (array, searchElement) => {
+  let count = 0;
+  for (let element of array) if (element === searchElement) count++;
+  return count;
+};
+
+const count = countOccurences([1, 2, 1, 3, 4, 1], 1);
+console.log(count);
+
+//using reduce() method
+function countOccurencesUsingReduce(array, searchElement) {
+  return array.reduce((accumilator, currentValue) => {
+    const count = currentValue === searchElement ? 1 : 0;
+    console.log(accumilator, currentValue, searchElement);
+    return accumilator + count;
+  }, 0);
+}
+
+console.log(countOccurencesUsingReduce([1, 2, 3, 4, 1], 1));
+
+// Get Max Value of an Array
+// -------------------------------
+console.log(maxValue([]));
+
+function maxValue(array) {
+  if (array.length === 0) return undefined;
+  let max = 0;
+  for (let element of array) if (element > max) max = element;
+  return max;
+}
+
+// using reduce() method
+// -------------------------
+console.log(maximum([1, 5, 8, 3, 4, 0]));
+
+function maximum(array) {
+  if (array.length === 0) return undefined;
+  return array.reduce((a, b) => (a > b ? a : b));
+}
+
+// Movies
+// ----------------
+const movies = [
+  { title: "a", year: 2018, rating: 4.5 },
+  { title: "b", year: 2018, rating: 4.7 },
+  { title: "c", year: 2018, rating: 3 },
+  { title: "d", year: 2017, rating: 4.5 },
+];
+
+console.log(getMovies(movies));
+
+function getMovies(movies) {
+  // All the movies in year 2018 and rating > 4
+  // sort them by their rating in descending order
+  // pick their title
+
+  const titles = movies
+    .filter((m) => m.year === 2018 && m.rating > 4)
+    .sort((a, b) => a.rating - b.rating)
+    .reverse()
+    .map((m) => m.title);
+
+  return titles;
+}
