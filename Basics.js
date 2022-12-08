@@ -5,6 +5,27 @@ let firstName = "Salmanul";
 let lastName = "Farisy";
 console.log(name, firstName, lastName);
 
+// console parse every output to string and log it.
+// Ex:-
+console.log(typeof typeof 123);
+
+// var
+var a = 20;
+var a = 30;
+
+// let
+let b = 10;
+b = 15;
+
+// const
+const c = 5;
+
+// var -> re-declare and re-assign
+// let -> re-assign
+// const -> No re-declare and re-assign
+// var is function scoped
+// let and const are block scoped (ES6 feature)
+
 // Constands - Constands in JS cannot be re-assigned
 // -------------------------------------------------------
 const interestRate = 0.3;
@@ -79,3 +100,8 @@ function squre(number) {
   return number * number;
 }
 console.log(squre(2));
+
+// new mwthod of function call
+(function myFun() {
+  console.log("Inside myFun()");
+})(); // iife calling

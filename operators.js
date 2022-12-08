@@ -48,6 +48,7 @@ console.log(x !== 1);
 // 1.Strict equality operator - (Both Type and value are checked)
 console.log(1 === 1);
 console.log("1" === 1);
+console.log("abc" === "1");
 
 // 2.Loose equality operator - (Value checking only)
 console.log(1 == 1);
@@ -59,6 +60,8 @@ console.log("2" == 1);
 // at the right side of the operartor. Then the JS will convert the type of the
 // right operant to match with the type of the left operand. Here, only the
 // value of the both operands are checked.
+console.log(NaN === NaN); // Two NaN's always retruns false. Because they
+// will not be equal forever.
 
 // 4.Ternary Operators
 // -------------------------
