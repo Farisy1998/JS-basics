@@ -377,3 +377,46 @@ function getMovies(movies) {
 
   return titles;
 }
+
+// Sum of Arguments
+// ---------------------
+function sum(...items) {
+  if (items.length === 1 && Array.isArray(items[0])) items = [...items[0]];
+  if (Array.isArray(items)) return items.reduce((a, b) => a + b);
+}
+
+console.log(sum([1, 2, 3, 4])); // passing arguments as numbers.
+
+// Area of Circle
+// -------------------
+const circle = {
+  radius: 2,
+  set area(value) {
+    this.radius = value;
+  },
+  get area() {
+    return Math.PI * (this.radius * this.radius);
+  },
+};
+
+circle.area = 3;
+
+console.log(circle.area);
+
+// Error Handiling
+// -----------------------
+try {
+  const occurencesOfNumber = countOccurencesCatchException(null, 1);
+  console.log(occurencesOfNumber);
+} catch (e) {
+  console.log(e);
+}
+
+function countOccurencesCatchException(array, searchElement) {
+  if (!Array.isArray(array)) throw new Error("Please enter an array.");
+  return array.reduce((accumilator, currentValue) => {
+    const count = currentValue === searchElement ? 1 : 0;
+    console.log(accumilator, currentValue, searchElement);
+    return accumilator + count;
+  }, 0);
+}

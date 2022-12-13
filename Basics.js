@@ -5,7 +5,7 @@ let firstName = "Salmanul";
 let lastName = "Farisy";
 console.log(name, firstName, lastName);
 
-// console parse every output to string and log it.
+// console parse every output to a string and log it.
 // Ex:-
 console.log(typeof typeof 123);
 
@@ -20,11 +20,20 @@ b = 15;
 // const
 const c = 5;
 
-// var -> re-declare and re-assign
-// let -> re-assign
-// const -> No re-declare and re-assign
-// var is function scoped
-// let and const are block scoped (ES6 feature)
+// var -> re-declare and re-assign.
+// let -> re-assign.
+// const -> No re-declare and re-assign.
+// Note:- var is function scoped and not block scoped. ie, variables declared
+// using var can be access any where in side a function, even it was declared
+// inside a block with in the function.
+// let and const are block scoped (ES6 feature).
+
+// Global Scope -> variables or constants declared globally can be accessible
+//                 any where from the program.
+// Local Scope -> variables or constants declared locally can be accessible
+//                inside a function or a block.
+// Note:- Local variables or constants in a function or a block will take
+// precidence over local variables or constants.
 
 // Constands - Constands in JS cannot be re-assigned
 // -------------------------------------------------------

@@ -1,0 +1,49 @@
+JavaScript is a Highlevel, Object-Oriented, Syncronous, Single-threaded, 
+Multiparadigm, Dynamicaly typed, Interpreted programing language.
+
+Highlevel - Codes can be writtten in actual human undestandable format (Grammatically 
+            in English).
+Object-Oriented - Every thing in JS is treated as an Object.
+Functional - JS can also be taked to a procedural or functional approch of programing.
+Syncronous - JS can only jump to  next task. If the execution of current task
+             has been completed.
+Single-threaded - The JS can only execute single task or thred at a time.
+Multiparadigm - JS is both Object-Oriented and Functional programing language.
+Dynamicaly typed - The data type of a variable is identified at runtime.
+Interpreted - The transilator of the JS code to Machine code is done by Interpreter.
+
+Every thing in JS happens inside an Execution Context.
+
+Execution context
+---------------------
+The JS execution context is a memory space, which consists of 2 components:-
+
+1. Memory component - The m/r component stores all variables and functions
+used in a JS program as key-value pair. The m/r component is also called 
+variable environment.
+
+2. Code component - The code component holds the actual code in a statement
+by statement manner, where each statement will be a single task. The code 
+component is also called Threads of execution.
+
+                    Execution Context
+---------------------------------------------------------------------
+
+         Memory                          Code
+    ---------------------         ---------------------
+    key : Value;                  var a = 10;
+        .                         function print(a){
+        .                           console.log(a);
+        .                         }
+    variable: value;              ............
+    fun : {                       ................
+      ........                    ....................
+    };
+
+----------------------------------------------------------------------
+
+In the JavaScript execution life cycle, 3 things will happen:-
+
+step 1: A new global execution context will be created.
+step 2: Memory allocation for all variables and functions will be performed.
+step 3. Code execution will be performed.

@@ -63,6 +63,9 @@ console.log("2" == 1);
 console.log(NaN === NaN); // Two NaN's always retruns false. Because they
 // will not be equal forever.
 
+// == -> Value checking
+// === -> Both value and type checking
+
 // 4.Ternary Operators
 // -------------------------
 let points = 90;

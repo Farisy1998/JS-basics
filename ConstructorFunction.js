@@ -16,7 +16,7 @@ function Circle(radius) {
 // an object.
 const circle = new Circle(1);
 // The new operator does three things:
-// 1. It will create an empty object ( {} ).
+// 1. It will create a new empty object ( {} ).
 // 2. It will then points the this operator to the early created empty object.
 // 3. Finaly, it will return an object to the object variable.
 
